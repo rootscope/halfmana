@@ -2,6 +2,7 @@ package net.rootscope.halfmana;
 
 import java.awt.Canvas;
 import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
 import javax.swing.JFrame;
@@ -51,11 +52,18 @@ public class Component extends Canvas implements Runnable{
 	}
 	
 	public void render(){
-		BufferStrategy bufferStrategy = getBufferStrategy();
-		if(bufferStrategy == null){
+		BufferStrategy bs = getBufferStrategy();
+		if(bs == null){
 			createBufferStrategy(3);
 			return;
 		}
+
+		Graphics g = bs.getDrawGraphics();
+		//
+
+		//
+		g.dispose();
+		bs.show();
 	}
 	
 	public static void main(String[] args){
