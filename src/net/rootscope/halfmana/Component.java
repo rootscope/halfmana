@@ -11,6 +11,14 @@ public class Component implements Runnable{
 		thread = new Thread(this, "component");
 		thread.start();
 	}
+	
+	public synchronized void stop(){
+		try {
+			thread.join();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
 
 	@Override
 	public void run() {
