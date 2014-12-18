@@ -67,9 +67,17 @@ public class Component extends Canvas implements Runnable{
 			createBufferStrategy(3);
 			return;
 		}
+		
+		screen.render();
+		
+		for(int i = 0; i < pixels.length; i++){
+			pixels[i] = screen.pixels[i];
+		}
 
 		Graphics g = bs.getDrawGraphics();
 		//
+
+		g.drawImage(image, 0, 0, getWidth(), getHeight(), null);
 
 		//
 		g.dispose();
