@@ -51,10 +51,20 @@ public class Component extends Canvas implements Runnable{
 
 	@Override
 	public void run(){
+		long time1 = System.nanoTime();
+		final double ns = 1000000000.0 / 60.0;
+		double delta = 0;
 		while(running){
-			tick();
+			long time2 = System.nanoTime();
+			delta += (time2 - time1) / ns;
+			time1 = time2;
+			while(delta >= 1){
+				tick();
+				delta--;
+			}
 			render();
 		}
+		stop();
 	}
 	
 	public void tick(){
