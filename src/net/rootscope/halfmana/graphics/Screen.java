@@ -5,6 +5,7 @@ public class Screen{
 	private int height;
 	
 	public int[] pixels;
+	public int[] tiles = new int[4096];
 	
 	public Screen(int width, int height){
 		this.width = width;
