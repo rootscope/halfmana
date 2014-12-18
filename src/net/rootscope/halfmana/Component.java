@@ -14,9 +14,9 @@ import net.rootscope.halfmana.graphics.Screen;
 public class Component extends Canvas implements Runnable{
 	private static final long serialVersionUID = 1L;
 
-	public static int width = 960;
-	public static int height = 540;
-	public static int scale = 1;
+	public static int width = 960 / 2;
+	public static int height = 540 / 2;
+	public static int scale = 2;
 	
 	private boolean running = false;
 	private Thread thread;

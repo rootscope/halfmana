@@ -6,7 +6,7 @@ public class Screen{
 	
 	public int[] pixels;
 	
-	int time;
+	int xtime = 0, ytime = 0;
 	int count;
 	
 	public Screen(int width, int height){
@@ -23,12 +23,13 @@ public class Screen{
 	
 	public void render(){
 		count++;
-		if(count % 10 == 0){
-			time++;
-		}
+		if(count % 10 == 0) xtime++;
+		if(count % 10 == 0) ytime++;
 		for(int y = 0; y < height; y++){
+			if(ytime >= height) break;
 			for(int x = 0; x < width; x++){
-				pixels[time + time * width] = 0xff00ff;
+				if(xtime >= width) break;
+				pixels[xtime + ytime * width] = 0xff00ff;
 			}
 		}
 
