@@ -18,6 +18,8 @@ public class Component extends Canvas implements Runnable{
 	public static int height = 540 / 2;
 	public static int scale = 2;
 	
+	public static String title = "halfmana";
+	
 	private boolean running = false;
 	private Thread thread;
 	private JFrame frame;
@@ -71,6 +73,9 @@ public class Component extends Canvas implements Runnable{
 			
 			if(System.currentTimeMillis() - timer > 1000){
 				timer += 1000;
+				frame.setTitle(title + " [fps = " + frames + "]");
+				frames = 0;
+				ticks = 0;
 			}
 		}
 		stop();
@@ -108,7 +113,7 @@ public class Component extends Canvas implements Runnable{
 		Component component = new Component();
 
 		component.frame.setResizable(false);
-		component.frame.setTitle("halfmana");
+		component.frame.setTitle(title);
 		component.frame.add(component);
 		component.frame.pack();
 		component.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
