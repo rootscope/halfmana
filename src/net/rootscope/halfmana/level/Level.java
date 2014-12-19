@@ -1,5 +1,7 @@
 package net.rootscope.halfmana.level;
 
+import net.rootscope.halfmana.graphics.Screen;
+
 public class Level{
 	private int width;
 	private int height; 
@@ -14,6 +16,18 @@ public class Level{
 	
 	public Level(String path){
 		loadLevel(path);
+	}
+	
+	public void tick(){
+		
+	}
+	
+	public void render(int xScroll, int yScroll, Screen screen){
+		
+	}
+	
+	private void time(){
+		
 	}
 	
 	private void generateLevel(){
