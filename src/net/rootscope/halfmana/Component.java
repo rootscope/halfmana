@@ -10,6 +10,7 @@ import java.awt.image.DataBufferInt;
 import javax.swing.JFrame;
 
 import net.rootscope.halfmana.graphics.Screen;
+import net.rootscope.halfmana.input.Keyboard;
 
 public class Component extends Canvas implements Runnable{
 	private static final long serialVersionUID = 1L;
@@ -23,6 +24,7 @@ public class Component extends Canvas implements Runnable{
 	private boolean running = false;
 	private Thread thread;
 	private JFrame frame;
+	private Keyboard keyboard;
 	private Screen screen;
 
 	private BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
@@ -31,9 +33,10 @@ public class Component extends Canvas implements Runnable{
 	public Component(){
 		Dimension size = new Dimension(width*scale, height*scale);
 		setPreferredSize(size);
-		
 		screen = new Screen(width, height);
 		frame = new JFrame();
+		keyboard = new Keyboard();
+		addKeyListener(keyboard);
 	}
 	
 	public synchronized void start(){
@@ -84,6 +87,7 @@ public class Component extends Canvas implements Runnable{
 	int x = 0;
 	int y = 0;
 	public void tick(){
+		keyboard.tick();
 		x++;
 		y++;
 		
