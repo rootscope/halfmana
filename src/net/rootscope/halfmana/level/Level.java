@@ -3,14 +3,14 @@ package net.rootscope.halfmana.level;
 import net.rootscope.halfmana.graphics.Screen;
 
 public class Level{
-	private int width;
-	private int height; 
-	private int[] sprites;
+	protected int width;
+	protected int height; 
+	protected int[] tiles;
 	
 	public Level(int width, int height){
 		this.width = width;
 		this.height = height;
-		sprites = new int[width * height];
+		tiles = new int[width * height];
 		generateLevel();
 	}
 	
