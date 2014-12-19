@@ -15,20 +15,31 @@ public class Keyboard implements KeyListener{
 		down = keys[KeyEvent.VK_DOWN] || keys[KeyEvent.VK_S];
 		left = keys[KeyEvent.VK_LEFT] || keys[KeyEvent.VK_A];
 		right = keys[KeyEvent.VK_RIGHT] || keys[KeyEvent.VK_D];
+		
+		//System.out.println(up);
+		
+		/*
+		for(int i = 0; i < keys.length; i++){
+			if(keys[i]){
+				System.out.println("key: " + i);
+			}
+		}
+		*/
 	}
 
 	@Override
 	public void keyTyped(KeyEvent e) {
-		keys[e.getKeyCode()] = true;
 	}
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		keys[e.getKeyCode()] = false;
+		keys[e.getKeyCode()] = true;
+		System.out.println(e.getKeyCode());
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
+		keys[e.getKeyCode()] = false;
 	}
 
 }

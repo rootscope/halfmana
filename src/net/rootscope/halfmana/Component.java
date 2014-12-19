@@ -24,7 +24,7 @@ public class Component extends Canvas implements Runnable{
 	private boolean running = false;
 	private Thread thread;
 	private JFrame frame;
-	private Keyboard keyboard;
+	private Keyboard key;
 	private Screen screen;
 
 	private BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
@@ -35,8 +35,8 @@ public class Component extends Canvas implements Runnable{
 		setPreferredSize(size);
 		screen = new Screen(width, height);
 		frame = new JFrame();
-		keyboard = new Keyboard();
-		addKeyListener(keyboard);
+		key = new Keyboard();
+		addKeyListener(key);
 	}
 	
 	public synchronized void start(){
@@ -87,10 +87,12 @@ public class Component extends Canvas implements Runnable{
 	int x = 0;
 	int y = 0;
 	public void tick(){
-		keyboard.tick();
-		x++;
-		y++;
-		
+		key.tick();
+		if(key.up) y -= 10;
+		if(key.down) y += 10;
+		if(key.left) x -= 10;
+		if(key.right) x += 10;
+		//System.out.println(x + ", " +  y);
 	}
 	
 	public void render(){
