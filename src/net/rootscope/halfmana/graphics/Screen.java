@@ -40,12 +40,16 @@ public class Screen{
 				pixels[xPix + yPix * width] = Sprite.grass.pixels[(x & 15) + ( y & 15) * Sprite.grass.SIZE];
 			}
 		}
-
 	}
 	
 	public void renderTile(int xPos, int yPos, Tile tile){
 		for(int y = 0; y < tile.sprite.SIZE; y++){
 			int yAbs = yPos + y;
+			for(int x = 0; x < tile.sprite.SIZE; x++){
+				int xAbs = xPos + x;
+				if(xAbs < 0 || xAbs >= width || yAbs < 0 || yAbs >= height) break;
+				pixels[xAbs + yAbs * width] = tile.sprite.pixels[x + y * tile.sprite.SIZE];
+			}
 			
 		}
 		
