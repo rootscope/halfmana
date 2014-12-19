@@ -16,8 +16,6 @@ public class Keyboard implements KeyListener{
 		left = keys[KeyEvent.VK_LEFT] || keys[KeyEvent.VK_A];
 		right = keys[KeyEvent.VK_RIGHT] || keys[KeyEvent.VK_D];
 		
-		//System.out.println(up);
-		
 		/*
 		for(int i = 0; i < keys.length; i++){
 			if(keys[i]){
@@ -34,7 +32,6 @@ public class Keyboard implements KeyListener{
 	@Override
 	public void keyPressed(KeyEvent e) {
 		keys[e.getKeyCode()] = true;
-		System.out.println(e.getKeyCode());
 	}
 
 	@Override

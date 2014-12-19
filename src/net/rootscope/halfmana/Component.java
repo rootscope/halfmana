@@ -17,7 +17,7 @@ public class Component extends Canvas implements Runnable{
 
 	public static int width = 960;
 	public static int height = 540;
-	public static int scale = 2;
+	public static int scale = 1;
 	
 	public static String title = "halfmana";
 	
@@ -62,6 +62,7 @@ public class Component extends Canvas implements Runnable{
 		double delta = 0;
 		int frames = 0;
 		int ticks = 0;
+		requestFocus();
 		while(running){
 			long time = System.nanoTime();
 			delta += (time - timex) / ns;
