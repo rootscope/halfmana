@@ -2,6 +2,8 @@ package net.rootscope.halfmana.graphics;
 
 import java.util.Random;
 
+import net.rootscope.halfmana.level.tile.Tile;
+
 public class Screen{
 	private int width;
 	private int height;
@@ -39,6 +41,14 @@ public class Screen{
 			}
 		}
 
+	}
+	
+	public void renderTile(int xPos, int yPos, Tile tile){
+		for(int y = 0; y < tile.sprite.SIZE; y++){
+			int yAbs = yPos + y;
+			
+		}
+		
 	}
 
 }
