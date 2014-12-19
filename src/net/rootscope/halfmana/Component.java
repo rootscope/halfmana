@@ -17,7 +17,7 @@ public class Component extends Canvas implements Runnable{
 
 	public static int width = 960;
 	public static int height = 540;
-	public static int scale = 1;
+	public static int scale = 2;
 	
 	public static String title = "halfmana";
 	

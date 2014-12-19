@@ -1,14 +1,14 @@
 package net.rootscope.halfmana.graphics;
 
 public class Sprite {
-	private final int SIZE;
+	public final int SIZE;
 	private int x;
 	private int y;  
 	private SpriteSheet sheet;
 	
 	public int[] pixels;
 
-	public static Sprite grass = new Sprite(16, 0, 0, sheet);
+	public static Sprite grass = new Sprite(16, 0, 0, SpriteSheet.sprites);
 	
 	
 	public Sprite(int size, int x, int y, SpriteSheet sheet){

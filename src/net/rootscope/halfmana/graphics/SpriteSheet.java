@@ -9,6 +9,8 @@ public class SpriteSheet {
 	private String path;
 	public final int SIZE;
 	public int[] pixels;
+	
+	public static SpriteSheet sprites = new SpriteSheet("/textures/spritesheet.png", 256);
 
 	public SpriteSheet(String path, int size){
 		this.path = path;
